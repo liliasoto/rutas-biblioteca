@@ -1,0 +1,42 @@
+.contenedor {
+    background-color: #EEF0F1;
+    box-shadow: 15px 5px 10px #CFD2E4;
+    max-width: 1200px;
+    padding-bottom: 50px;
+    margin: auto;
+}
+
+.libros{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.tabla_libros{
+    border: 1px solid #1c1c1c;
+    border-collapse: collapse;
+    /*width: max-content;*/
+}
+
+.tabla_libros th{
+    border: 1px solid #1c1c1c;
+    background-color: #414142;
+    color: #FAFFFF;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.tabla_libros td{
+    border: 1px solid #1c1c1c;
+    text-align: left;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.tabla_libros tr:nth-child(even){
+    background-color: #DAD9D9;
+    color: #1c1c1c;
+}

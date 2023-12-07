@@ -1,0 +1,43 @@
+.contenedor_t{
+    background-color: #EEF0F1;
+    box-shadow: 15px 5px 10px #CFD2E4;
+    max-width: 300px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: auto;
+}
+
+.autores{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.tabla_autores{
+    border: 1px solid #1c1c1c;
+    border-collapse: collapse;
+}
+
+.tabla_autores th{
+    border: 1px solid #1c1c1c;
+    background-color: #414142;
+    color: #FAFFFF;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.tabla_autores td{
+    border: 1px solid #1c1c1c;
+    text-align: left;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.tabla_autores tr:nth-child(even){
+    background-color: #DAD9D9;
+    color: #1c1c1c;
+}
