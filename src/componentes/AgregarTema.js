@@ -9,12 +9,13 @@ Modal.setAppElement('#root');
 
 export default function AgregarTema(){
 
+
   const [isLoading, setLoading] = useState(false); //Mensaje enviado
   const [isError, setIsError] = useState(false); 
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const {register, handleSubmit, 
-          formState:{errors}
+          formState:{errors}, reset 
         } = useForm();
 
   const onSubmit = handleSubmit(
@@ -32,6 +33,7 @@ export default function AgregarTema(){
       axios.post("http://localhost/temas", data).then(res => {
         console.log(res);
         setLoading(false);
+        reset();
         setModalIsOpen(true); 
       }).catch(err =>{
         setLoading(false);
@@ -53,7 +55,7 @@ export default function AgregarTema(){
         <input 
           type="text"
           {...register('nombre', {
-            require:true
+            required:true
           })}/><br></br>
 
           {errors.nombre && <span>El nombre es requerido</span>}

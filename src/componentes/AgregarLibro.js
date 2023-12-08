@@ -18,7 +18,7 @@ export default function AgregarLibro(){
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const {register, handleSubmit, setValue,
-          formState:{errors}
+          formState:{errors}, reset
         } = useForm();
 
   useEffect(() => {
@@ -49,6 +49,7 @@ export default function AgregarLibro(){
       axios.post("http://localhost/libros", modifiedData).then(res => {
         console.log(res);
         setLoading(false);
+        reset();
         setModalIsOpen(true); 
       }).catch(err =>{
         setLoading(false);
@@ -61,6 +62,7 @@ export default function AgregarLibro(){
     setModalIsOpen(false);
   };
 
+  
   return(
     <div className="contenedor_li">
       <div className="formm"> 
@@ -71,7 +73,7 @@ export default function AgregarLibro(){
         <input 
           type="text"
           {...register('titulo', {
-            require:true
+            required:true
           })}/>
 
           {errors.titulo && <span>El titulo es requerido</span>}
@@ -81,7 +83,7 @@ export default function AgregarLibro(){
         <input 
           type="text"
           {...register('edicion', {
-            require:true
+            required:true
           })}/>
 
           {errors.edicion && <span>La edicion es requerida</span>}
